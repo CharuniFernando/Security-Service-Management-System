@@ -1,0 +1,95 @@
+.operatin_card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 10px 10%;
+  gap: 25px;
+}
+.data_card {
+  width: 300px;
+  border: 1px solid #015b7e;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.font_main_card {
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+.sub_font_data {
+  margin-left: 15px;
+  margin-bottom: 8px;
+}
+.action_btn_set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+/* Modal Background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1000; /* Make sure it's above other content */
+}
+.modal_content {
+  padding: 25px;
+  background-color: white;
+}
+.update_box_topic {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.details_box_model {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 30px;
+  gap: 10px;
+}
+.fl_data_dl {
+  margin: 10px 0;
+}
+.data_name {
+  font-size: 21px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.dlt_icon{
+    color: white;
+    background-color: red;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 3px;
+    border-radius: 4px;
+}
+.seletc_opection{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+.add_btn{
+    background-color: #015b7e;
+    border: 1px solid #015b7e;
+    padding: 3px 10px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+}

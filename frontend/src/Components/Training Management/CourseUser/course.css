@@ -1,0 +1,26 @@
+.usercourse_container {
+  padding: 0 10% 25px 10%;
+}
+.usercourse_card {
+  border: 1px solid #015b7e;
+  border-radius: 10px;
+  margin: 0 0 25px 0;
+  padding: 10px 20px;
+}
+
+.usercourse_name {
+  text-align: center;
+  text-transform: capitalize;
+  color: #015b7e;
+  font-weight: 600;
+  font-size: 30px;
+}
+.usercourse_category {
+  text-align: center;
+}
+.topic_course {
+  padding: 25px 10%;
+  font-weight: 600;
+  color: #015b7e;
+  cursor: pointer;
+}

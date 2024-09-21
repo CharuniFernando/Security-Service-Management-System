@@ -1,0 +1,128 @@
+.admin_table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #015b7e;
+  margin-bottom: 25px;
+}
+.admin_table_th,
+.admin_table_td {
+  border: 1px solid #015b7e;
+}
+.admin_table_th{
+    font-weight: 600;
+  padding: 5px 8px;
+    text-transform: capitalize;
+}
+.admin_table_td {
+  padding: 5px;
+}
+.table_main_admin {
+  padding: 10px 10%;
+}
+.admin_topic {
+  text-align: center;
+  margin: 25px 0;
+  font-weight: 600;
+}
+.action_set_admin {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10%;
+  margin-bottom: 25px;
+}
+.select_drop_admin {
+  width: 150px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  padding: 3px 8px;
+  border: 1px solid #015b7e;
+}
+
+.admin_search {
+  font-size: 16px;
+  border-radius: 2px;
+  border: 1px solid #015b7e;
+  padding: 3px 8px;
+}
+
+.search_btn_admin {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #015b7e;
+  padding: 3px 8px;
+  margin-left: 10px;
+  font-weight: 600;
+  color: white;
+  background-color: #015b7e;
+}
+
+.admin_dash_btn {
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #015b7e;
+  padding: 3px 8px;
+  font-weight: 600;
+  color: white;
+  background-color: #015b7e;
+}
+.tbl_no {
+  text-align: center;
+  margin: 10px 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+.update_btn_dash_admin {
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #015b7e;
+  padding: 3px 8px;
+  font-weight: 600;
+  color: white;
+  background-color: #015b7e;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.cenbtn {
+  text-align: center;
+}
+.btn_dash_admin_delete {
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid red;
+  padding: 3px 8px;
+  font-weight: 600;
+  color: white;
+  background-color: red;
+  margin-left: 10px;
+  text-decoration: none;
+}
+.logout_btn_main {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+}
+
+.logout_btn_sub {
+  background-color: #015b7e;
+  color: white;
+  padding: 12px;
+  display: flex;
+  cursor: pointer;
+  width: 60px;
+  z-index: 1000;
+  height: 60px;
+  border-radius: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.logout_btn {
+  font-size: 50px;
+}
+.table_container {
+    overflow-x: auto;
+    white-space: nowrap; /* Ensures the table rows don't wrap */
+  }

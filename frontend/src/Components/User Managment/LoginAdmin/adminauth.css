@@ -1,0 +1,67 @@
+.auth_home_bk_user {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/user.png);
+}
+.auth_home_bk_training {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/Training.png);
+}
+.auth_home_bk_client {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/client.png);
+}
+.auth_home_bk_booking {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/Booking.png);
+}
+.auth_home_bk_payment {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/payment.png);
+}
+.auth_home_bk_operation {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/Operation.png);
+}
+.auth_home_bk_inventry {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/Inventory.png);
+}
+.auth_home_bk_leave {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/Leave.png);
+}
+.trafrom{
+    width: 500px;
+}

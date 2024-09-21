@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.auth_home_bk {
+  width: 100%;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(./img/cyber5.jpg);
+}
+
+.auth_from {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  position: relative;
+  top: 22%;
+  left: 10%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade_up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.auth_from_add {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  position: relative;
+  top: 16%;
+  left: 10%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.auth_from_add_regi {
+  background-color: white;
+  width: 400px;
+  border-radius: 8px;
+  position: relative;
+  top: 3%;
+  left: 10%;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.auth_topic {
+  color: #015b7e;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 8px;
+  text-align: center;
+  text-transform: capitalize;
+}
+.form_lable {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.form_input {
+  border: 1px solid #015b7e;
+  padding: 4px 10px;
+  margin: 4px 0 10px 0;
+  border-radius: 3px;
+  width: 100%;
+}
+input:focus,
+input:active {
+  outline: none;
+}
+.auth_btn {
+  width: 100%;
+  background-color: #015b7e;
+  margin: 10px 0;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 0;
+  letter-spacing: 0.5px;
+  border: 1px solid #015b7e;
+  border-radius: 3px;
+}
+.auth_pera_one {
+  text-align: end;
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.auth_pera_one:hover {
+  color: #015b7e;
+  font-weight: 600;
+}
+.auth_pera_two_sub:hover {
+  color: #015b7e;
+  font-weight: 600;
+}
+.auth_pera_two {
+  text-transform: capitalize;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.auth_pera_two_sub {
+  margin-left: 5px;
+}
+
+.profile_cover {
+  width: 100%;
+  height: auto;
+  font-size: 60px;
+  align-items: center;
+  font-weight: 600;
+  color: white;
+  padding: 0 10%;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  background-color: #015b7e;
+  cursor: pointer;
+}
+.name_fade {
+  padding: 40px 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.profile_card {
+  width: 350px;
+  padding: 15px;
+  margin: 25px auto;
+  border: 1px solid #015b7e;
+}
+.mainn_name_pro {
+  font-size: 17px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.sub_name_pro {
+  margin-left: 15px;
+}
+.btn_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 0;
+  align-items: center;
+}
+.btn_delete {
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid red;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 3px;
+  background-color: red;
+}
+
+.btn_update {
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid green;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 3px;
+  background-color: green;
+  font-weight: 500;
+}
+
+.auth_from_update {
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+}
+.auth_from_update_main {
+  background-color: white;
+  width: 500px;
+  border-radius: 8px;
+  border: 1px solid #015b7e;
+  margin: 0 auto;
+  padding: 20px;
+  opacity: 0;
+
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+.from_two_set {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.date_input {
+  width: 210px;
+}
+.foget_perar {
+  font-size: 14px;
+  display: flex;
+  text-align: end;
+  justify-content: end;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.foget_perar:hover {
+  color: #015b7e;
+  font-weight: 600;
+}
+.newbox{
+  top: 32%;
+}
+
+.profile_photo{
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  display: flex;
+  cursor: pointer;
+  border-radius: 100%;
+}
