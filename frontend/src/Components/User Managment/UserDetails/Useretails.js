@@ -85,7 +85,7 @@ function EmployeDetails() {
     });
 
     // Save the PDF file
-    doc.save("Employee_Report.pdf");
+    doc.save("User_Details_Report.pdf");
   };
 
   return (
