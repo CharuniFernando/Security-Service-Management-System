@@ -17,7 +17,7 @@ function Login() {
 
     // Example hardcoded credentials
     const validUsername = "inventoryManager";
-    const validPassword = "securePassword123";
+    const validPassword = "inventory123";
 
     if (username === validUsername && password === validPassword) {
       alert("Login successful!");
