@@ -6,7 +6,7 @@ function Footer() {
       <div className="footer_row">
         <div className="footer_row_card">
           <p className="footer_topic">Contact Info</p>
-          <p className="conten_footer">Street 238,52 tempor</p>
+          <p className="conten_footer">Street 489,52 tempor</p>
           <p className="conten_footer">
             Donec ultricies mattis nulla, suscipit
           </p>

@@ -30,12 +30,7 @@ function HomeNav() {
           >
             About
           </p>
-          <p
-            className={`nav_item ${isActive("/adminadminloginDash")}`}
-            onClick={() => navigate("/adminloginDash")}
-          >
-            Admin
-          </p>
+         
           {/* Conditionally render based on user type */}
           {userType === "Employee" && (
             <>
