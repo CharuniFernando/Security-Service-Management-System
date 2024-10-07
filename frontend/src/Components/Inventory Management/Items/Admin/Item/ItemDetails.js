@@ -214,9 +214,13 @@ const ItemDetails = () => {
                             type="text"
                             name="name"
                             value={updateData.name}
-                            onChange={(e) =>
-                              handleChange(e.target.value, "name")
-                            }
+                           
+                            onChange={(e) => {
+                              const re = /^[A-Za-z\s]*$/;
+                              if (re.test(e.target.value)) {
+                                handleChange(e.target.value, "name");
+                              }
+                            }}
                             required
                           />
                           <br />

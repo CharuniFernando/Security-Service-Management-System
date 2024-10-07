@@ -18,7 +18,7 @@ function UpdateEmploye() {
         console.error("Error fetching data:", error);
       }
     };
-    fetchHandler(); 
+    fetchHandler();
   }, [id]);
   const sendRequest = async () => {
     await axios
@@ -28,6 +28,7 @@ function UpdateEmploye() {
         phone: String(inputs.phone),
         address: String(inputs.address),
         gmail: String(inputs.gmail),
+        emptype: String(inputs.emptype),
       })
       .then((res) => res.data);
   };
@@ -39,6 +40,12 @@ function UpdateEmploye() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Email validation for Gmail
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!emailRegex.test(inputs.email)) {
+      window.alert("Please enter a valid Gmail address ending with @gmail.com");
+      return; // Stop form submission if invalid
+    }
     console.log(inputs);
 
     sendRequest().then(() => {
@@ -67,18 +74,49 @@ function UpdateEmploye() {
                   required
                 >
                   <option value="">Select Type</option>{" "}
-                  {/* Optional placeholder */}
                   <option value="Client">Client</option>
                   <option value="Employee">Employee</option>
                 </select>
                 <br></br>
+                {inputs.type === "Employee" && (
+                  <>
+                    <label className="form_lable">
+                      Select Your Employee Type
+                    </label>
+                    <br></br>
+                    <select
+                      className="form_input"
+                      value={inputs.emptype}
+                      onChange={handleChange}
+                      name="emptype"
+                    >
+                      <option value="">Select Type</option>
+                      {/* Optional placeholder */}
+                      <option value="Security Officer">Security Officer</option>
+                      <option value="Lady Security Officer">
+                        Lady Security Officer
+                      </option>
+                      <option value="Body Guard">Body Guard</option>
+                      <option value="Lady Security Officer">
+                        VVIP Officer
+                      </option>
+                    </select>
+
+                    <br></br>
+                  </>
+                )}
                 <label className="form_lable">name</label>
                 <br></br>
                 <input
                   className="form_input"
                   type="text"
                   value={inputs.name}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    const re = /^[A-Za-z\s]*$/;
+                    if (re.test(e.target.value)) {
+                      handleChange(e);
+                    }
+                  }}
                   name="name"
                   required
                 />
@@ -86,12 +124,20 @@ function UpdateEmploye() {
                 <label className="form_lable">phone</label>
                 <br></br>
                 <input
-                  className="form_input"
                   type="text"
-                  pattern="[0-9]{10}"
-                  value={inputs.phone}
-                  onChange={handleChange}
+                  id="phone"
                   name="phone"
+                  className="form_input"
+                  value={inputs.phone}
+                  onChange={(e) => {
+                    const re = /^[0-9\b]{0,10}$/;
+                    if (re.test(e.target.value)) {
+                      handleChange(e);
+                    }
+                  }}
+                  maxLength="10"
+                  pattern="[0-9]{10}"
+                  title="Please enter exactly 10 digits."
                   required
                 />
                 <br></br>

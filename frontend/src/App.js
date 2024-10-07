@@ -44,6 +44,7 @@ import MyInquiry from "./Components/Client Management/MyInquiry/MyInquiry";
 import GmailPw from "./Components/User Managment/ForgotPW/GmailPw";
 import ValidateCode from "./Components/User Managment/ForgotPW/ValidateCode";
 import UpdatePw from "./Components/User Managment/ForgotPW/UpdatePw";
+import AdminUserAccCreate from "./Components/User Managment/AdminUserAccCreate/AdminUserAccCreate";
 function App() {
   return (
     <div>
@@ -69,6 +70,7 @@ function App() {
           <Route path="/" element={<UserLogin />} />
           <Route path="/gmailveryfy" element={<GmailPw />} />
           <Route path="/updatepw" element={<UpdatePw />} />
+          <Route path="/adminAddUser" element={<AdminUserAccCreate />} />
           {/*Training Managemnet System*/}
           <Route path="/addcourse" element={<AddCourse />} />
           <Route path="/coursedash" element={<AllCourses />} />

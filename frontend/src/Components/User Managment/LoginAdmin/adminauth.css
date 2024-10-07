@@ -65,3 +65,7 @@
 .trafrom{
     width: 500px;
 }
+.table_container {
+  overflow-x: auto;
+  white-space: nowrap; /* Ensures the table rows don't wrap */
+}

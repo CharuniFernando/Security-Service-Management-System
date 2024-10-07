@@ -11,7 +11,9 @@ function UpdateProfile() {
   useEffect(() => {
     const fetchHandler = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/employee/${id}`);
+        const response = await axios.get(
+          `http://localhost:5000/employee/${id}`
+        );
         setInputs(response.data.emp);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -58,6 +60,12 @@ function UpdateProfile() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     // Email validation for Gmail
+     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+     if (!emailRegex.test(inputs.email)) {
+       window.alert("Please enter a valid Gmail address ending with @gmail.com");
+       return; // Stop form submission if invalid
+     }
     await sendRequest().then(() => {
       window.alert("Account updated successfully!");
       history("/"); // Redirect after update
@@ -77,20 +85,33 @@ function UpdateProfile() {
               className="form_input"
               type="text"
               value={inputs.name}
-              onChange={handleChange}
+              onChange={(e) => {
+                const re = /^[A-Za-z\s]*$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
               name="name"
               required
             />
 
             <label className="form_label">Phone</label>
             <input
-              className="form_input"
-              type="text"
-              pattern="[0-9]{10}"
-              value={inputs.phone}
-              onChange={handleChange}
-              name="phone"
-              required
+            type="text"
+            id="phone"
+            name="phone"
+            className="form_input"
+            value={inputs.phone}
+            onChange={(e) => {
+              const re = /^[0-9\b]{0,10}$/;
+              if (re.test(e.target.value)) {
+                handleChange(e);
+              }
+            }}
+            maxLength="10"
+            pattern="[0-9]{10}"
+            title="Please enter exactly 10 digits."
+            required
             />
 
             <label className="form_label">Gmail</label>

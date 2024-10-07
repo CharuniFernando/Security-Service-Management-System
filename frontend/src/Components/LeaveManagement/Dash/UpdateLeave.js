@@ -51,6 +51,12 @@ function UpdateLeave() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+     // Email validation for Gmail
+     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+     if (!emailRegex.test(inputs.email)) {
+       window.alert("Please enter a valid Gmail address ending with @gmail.com");
+       return; // Stop form submission if invalid
+     }
     sendRequest().then(() => {
       window.alert("update successfully!");
       history("/levedash");
@@ -75,7 +81,12 @@ function UpdateLeave() {
               type="text"
               name="name"
               value={inputs.name}
-              onChange={handleChange}
+              onChange={(e) => {
+                const re = /^[A-Za-z\s]*$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
               className="form_input"
               required
             />
@@ -96,10 +107,19 @@ function UpdateLeave() {
             <br />
             <input
               type="text"
+              id="phone"
               name="phone"
-              value={inputs.phone}
-              onChange={handleChange}
               className="form_input"
+              value={inputs.phone}
+              onChange={(e) => {
+                const re = /^[0-9\b]{0,10}$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
+              maxLength="10"
+              pattern="[0-9]{10}"
+              title="Please enter exactly 10 digits."
               required
             />
             <br />
