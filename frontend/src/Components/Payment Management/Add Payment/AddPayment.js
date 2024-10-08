@@ -154,7 +154,12 @@ const AddPaymentForm = () => {
                     type="text"
                     name="cardholdername"
                     value={inputs.cardholdername}
-                    onChange={handleChange}
+                    onChange={(e) => {
+                      const re = /^[A-Za-z\s]*$/;
+                      if (re.test(e.target.value)) {
+                        handleChange(e);
+                      }
+                    }}
                     className="form_input"
                     required
                   />
@@ -170,6 +175,7 @@ const AddPaymentForm = () => {
                         onChange={handleChange}
                         className="form_input date_input"
                         required
+                        maxLength="3"
                       />
                     </div>
                     <div>

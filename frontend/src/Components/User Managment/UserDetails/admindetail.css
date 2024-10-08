@@ -8,10 +8,10 @@
 .admin_table_td {
   border: 1px solid #015b7e;
 }
-.admin_table_th{
-    font-weight: 600;
+.admin_table_th {
+  font-weight: 600;
   padding: 5px 8px;
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 .admin_table_td {
   padding: 5px;
@@ -123,6 +123,23 @@
   font-size: 50px;
 }
 .table_container {
-    overflow-x: auto;
-    white-space: nowrap; /* Ensures the table rows don't wrap */
-  }
+  overflow-x: auto;
+  white-space: nowrap; /* Ensures the table rows don't wrap */
+}
+.tab_navigation {
+  margin: 0 auto 25px 0;
+  text-align: center;
+}
+.tab_button {
+  margin: 0 15px 0 0;
+  background-color: white;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 20px;
+  color: #015b7e;
+}
+.active_tab{
+  border-bottom: 3px solid #015b7e;
+  padding-bottom: 5px;
+}

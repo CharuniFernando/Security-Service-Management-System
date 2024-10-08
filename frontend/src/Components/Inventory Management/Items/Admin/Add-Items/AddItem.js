@@ -82,7 +82,12 @@ function AddRate() {
               type="text"
               name="name"
               value={inputs.name}
-              onChange={handleChange}
+              onChange={(e) => {
+                const re = /^[A-Za-z\s]*$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
               className="form_input"
               required
             />

@@ -11,11 +11,13 @@ function AddEmploye() {
     phone: "",
     address: "",
     password: "",
+    emptype: "",
   });
   const [profilePhoto, setProfilePhoto] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setInputs((prevInputs) => ({
       ...prevInputs,
       [name]: value,
@@ -28,9 +30,15 @@ function AddEmploye() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Email validation for Gmail
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!emailRegex.test(inputs.gmail)) {
+      window.alert("Please enter a valid Gmail address ending with @gmail.com");
+      return; // Stop form submission if invalid
+    }
     try {
       const response = await sendRequest();
-      console.log(response.data); 
+      console.log(response.data);
       window.alert("Account Created successfully!");
       navigate("/");
     } catch (error) {
@@ -47,6 +55,7 @@ function AddEmploye() {
     formData.append("phone", inputs.phone);
     formData.append("address", inputs.address);
     formData.append("password", inputs.password);
+    formData.append("emptype", inputs.emptype);
     if (profilePhoto) {
       formData.append("profilePhoto", profilePhoto);
     }
@@ -88,15 +97,37 @@ function AddEmploye() {
                 <label className="form_lable">Profile Photo</label>
                 <br></br>
                 <input
-                 type="file"
-                 className="form_input"
-                 accept="image/*"
-                 onChange={handleFileChange}
+                  type="file"
+                  className="form_input"
+                  accept="image/*"
+                  onChange={handleFileChange}
                 />
                 <br></br>
               </>
             )}
+            {inputs.type === "Employee" && (
+              <>
+                <label className="form_lable">Select Your Employee Type</label>
+                <br></br>
+                <select
+                  className="form_input"
+                  value={inputs.emptype}
+                  onChange={handleChange}
+                  name="emptype"
+                >
+                  <option value="">Select Type</option>
+                  {/* Optional placeholder */}
+                  <option value="Security Officer">Security Officer</option>
+                  <option value="Lady Security Officer">
+                    Lady Security Officer
+                  </option>
+                  <option value="Body Guard">Body Guard</option>
+                  <option value="Lady Security Officer">VVIP Officer</option>
+                </select>
 
+                <br></br>
+              </>
+            )}
             <label className="form_lable">name</label>
             <br></br>
             <input
@@ -104,7 +135,12 @@ function AddEmploye() {
               type="text"
               required
               value={inputs.name}
-              onChange={handleChange}
+              onChange={(e) => {
+                const re = /^[A-Za-z\s]*$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
               name="name"
             />
             <br></br>
@@ -133,12 +169,20 @@ function AddEmploye() {
             <label className="form_lable">phone</label>
             <br></br>
             <input
-              className="form_input"
               type="text"
-              pattern="[0-9]{10}"
-              value={inputs.phone}
-              onChange={handleChange}
+              id="phone"
               name="phone"
+              className="form_input"
+              value={inputs.phone}
+              onChange={(e) => {
+                const re = /^[0-9\b]{0,10}$/;
+                if (re.test(e.target.value)) {
+                  handleChange(e);
+                }
+              }}
+              maxLength="10"
+              pattern="[0-9]{10}"
+              title="Please enter exactly 10 digits."
               required
             />
             <br></br>
