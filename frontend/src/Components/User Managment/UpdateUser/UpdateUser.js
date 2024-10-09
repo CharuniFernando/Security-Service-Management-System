@@ -40,19 +40,20 @@ function UpdateEmploye() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Email validation for gmail
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    // Updated Email validation for gmail (case-insensitive)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
     if (!emailRegex.test(inputs.gmail)) {
       window.alert("Please enter a valid gmail address ending with @gmail.com");
       return; // Stop form submission if invalid
     }
     console.log(inputs);
-
+  
     sendRequest().then(() => {
       window.alert("Account Update successfully!");
       history("/useredetails");
     });
   };
+  
   return (
     <div>
       <div className="auth_from_update">
