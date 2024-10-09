@@ -40,10 +40,10 @@ function UpdateEmploye() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Email validation for Gmail
+    // Email validation for gmail
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-    if (!emailRegex.test(inputs.email)) {
-      window.alert("Please enter a valid Gmail address ending with @gmail.com");
+    if (!emailRegex.test(inputs.gmail)) {
+      window.alert("Please enter a valid gmail address ending with @gmail.com");
       return; // Stop form submission if invalid
     }
     console.log(inputs);
