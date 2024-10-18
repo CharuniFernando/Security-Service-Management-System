@@ -130,7 +130,7 @@ function EmployeDetails() {
 
     doc.setTextColor(169, 169, 169); // Gray text color for SSMS
     doc.setFontSize(12);
-    doc.text("SSMS", doc.internal.pageSize.getWidth() / 2 - 10, pageHeight - 7); // Centered text for SSMS
+    doc.text("01", doc.internal.pageSize.getWidth() / 2 - 10, pageHeight - 7); // Centered text for SSMS
 
     // Save the generated PDF
     doc.save(`${selectedTab}_Details_Report.pdf`);
