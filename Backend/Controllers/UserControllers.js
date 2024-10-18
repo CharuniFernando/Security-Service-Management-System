@@ -48,7 +48,7 @@ const getAllUser = async (req, res, next) => {
 
 // Add a new User with validation and file upload
 const addUser = async (req, res, next) => {
-  const { type, name, gmail, address, phone, password } = req.body;
+  const { type, name, gmail, address, phone, password,emptype } = req.body;
   const profilePhoto = req.file ? req.file.path : ""; // Handle file upload
 
   let existingUser;
@@ -70,6 +70,7 @@ const addUser = async (req, res, next) => {
       gmail,
       address,
       phone,
+      emptype,
       password,
       profilePhoto, // Store the profile photo path
     });
@@ -101,7 +102,7 @@ const getById = async (req, res, next) => {
 // Update User Details with profile photo
 const updateUser = async (req, res, next) => {
   const id = req.params.id;
-  const { type, name, gmail, address, phone, password } = req.body;
+  const { type, name, gmail, address, phone, password,emptype } = req.body;
   const profilePhoto = req.file ? req.file.path : ""; // Handle file update
 
   let emps;
@@ -112,6 +113,7 @@ const updateUser = async (req, res, next) => {
       gmail,
       address,
       phone,
+      emptype,
       password,
       profilePhoto, // Update the profile photo if new file uploaded
     });
