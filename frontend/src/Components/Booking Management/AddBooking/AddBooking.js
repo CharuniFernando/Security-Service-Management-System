@@ -39,12 +39,6 @@ function AddBooking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Email validation for Gmail
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
-    if (!emailRegex.test(inputs.email)) {
-      window.alert("Please enter a valid Gmail address ending with @gmail.com");
-      return; // Stop form submission if invalid
-    }
     console.log(inputs);
     await sendRequest();
     localStorage.setItem("bookingID", inputs.bookingID);
@@ -91,13 +85,10 @@ function AddBooking() {
               type="text"
               name="name"
               value={inputs.name}
-              onChange={(e) => {
-                const re = /^[A-Za-z\s]*$/;
-                if (re.test(e.target.value)) {
-                  handleChange(e);
-                }
-              }}
+              onChange={handleChange}
               className="form_input"
+              pattern="[A-Za-z\s]+"
+              title="Only letters and spaces are allowed"
               required
             />
             <br />
@@ -107,7 +98,12 @@ function AddBooking() {
               type="email"
               name="email"
               value={inputs.email}
-              onChange={handleChange}
+              onChange={(e) => {
+                // Allow only letters, numbers, and periods
+                const regex = /^[a-zA-Z0-9._@]+$/; // Regex to allow letters, numbers, and periods only
+                if (regex.test(e.target.value) || e.target.value === "") {
+                  handleChange(e); // Update input if valid
+                }}}
               className="form_input"
               required
             />
@@ -115,20 +111,17 @@ function AddBooking() {
             <label className="form_lable">Phone</label>
             <br />
             <input
-              type="text"
-              id="phone"
+              type="tel"
               name="phone"
-              className="form_input"
               value={inputs.phone}
-              onChange={(e) => {
-                const re = /^[0-9\b]{0,10}$/;
-                if (re.test(e.target.value)) {
-                  handleChange(e);
-                }
-              }}
-              maxLength="10"
+              onChange={handleChange}
+              className="form_input"
               pattern="[0-9]{10}"
-              title="Please enter exactly 10 digits."
+              maxLength={10}
+              inputMode="numeric"
+              onInput={(e)=>{
+                e.target.value = e.target.value.replace(/[^0-9]/g,"");
+              }}
               required
             />
             <br />
@@ -166,6 +159,7 @@ function AddBooking() {
               value={inputs.date}
               onChange={handleChange}
               className="form_input"
+              min={new Date().toISOString().split("T")[0]}
               required
             />
             <br />
@@ -175,24 +169,23 @@ function AddBooking() {
               type="text"
               name="securityOfficer"
               value={inputs.securityOfficer}
-              onChange={(e) => {
-                const re = /^[A-Za-z\s]*$/;
-                if (re.test(e.target.value)) {
-                  handleChange(e);
-                }
-              }}
+              onChange={handleChange}
               className="form_input"
+              pattern="[A-Za-z\s]+"
+              title="Only letters and spaces are allowed"
               required
             />
             <br />
             <label className="form_lable">Special Instructions</label>
             <br />
-            <textarea
+            <input
               type="text"
               name="specialInstructions"
               value={inputs.specialInstructions}
               onChange={handleChange}
               className="form_input"
+              pattern="[A-Za-z0-9\s]+"
+              title="Only letters, numbers, and spaces are allowed. No special characters or minus numbers."
               required
             />
             <br />
