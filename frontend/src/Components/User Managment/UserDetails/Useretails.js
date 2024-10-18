@@ -89,7 +89,17 @@ function EmployeDetails() {
     // Add "SSMS" to the right side of the header
     doc.setTextColor(255, 255, 255); // White text color for SSMS
     doc.setFontSize(18);
-    doc.text("SSMS", doc.internal.pageSize.getWidth() - 40, 20); // Positioning for SSMS title
+    doc.text("Security Service Management System", doc.internal.pageSize.getWidth() - 120, 9); // Positioning for SSMS title
+
+    doc.setFontSize(12);
+    doc.text("Address: No 50/B, Galle Road, Colombo", doc.internal.pageSize.getWidth() - 120, 15); // Positioning for Address
+
+    doc.setFontSize(12);
+    doc.text("Contact No: +94 71 560 7832", doc.internal.pageSize.getWidth() - 120, 21); // Positioning for Contact No
+
+    doc.setFontSize(12);
+    doc.text("Email: ssms@info.com", doc.internal.pageSize.getWidth() - 120, 26); // Positioning for Contact No
+
 
     // Add the title of the report below the header
     doc.setTextColor(0, 0, 0); // Set text color back to black
