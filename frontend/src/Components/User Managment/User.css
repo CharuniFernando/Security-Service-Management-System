@@ -243,3 +243,19 @@ input:active {
   cursor: pointer;
   border-radius: 100%;
 }
+
+.button_container {
+  display: flex;
+  justify-content: space-between; /* Aligns buttons on both sides */
+  margin-top: 15px; /* Space above buttons */
+}
+
+.update_submit_btn,
+.cancel_btn {
+  padding: 10px 20px; /* Adjust padding as needed */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+

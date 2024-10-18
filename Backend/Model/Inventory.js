@@ -1,3 +1,4 @@
+// Model/Inventory.js
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
@@ -14,12 +15,13 @@ const ItemSchema = new Schema({
   quantity: {
     type: Number,
     required: true,
+    min: 1, // Ensure quantity is at least 1
   },
   size: {
     type: String,
     required: true,
   },
-  category: { // New field for category
+  category: {
     type: String,
     required: true,
   },
