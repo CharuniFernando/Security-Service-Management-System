@@ -165,8 +165,8 @@ const ItemDetails = () => {
       item.company,
     ]);
 
-    doc.setFontSize(14);
-    doc.text("Inventory Item Report", 14, 20);
+    doc.setFontSize(16);
+    doc.text("Security Service Management SystemInventory Item Report", 14, 20);
     doc.setFontSize(10);
     doc.text(`Generated on: ${generatedTime}`, 14, 30);
 
